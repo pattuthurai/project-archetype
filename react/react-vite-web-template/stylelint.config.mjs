@@ -3,22 +3,14 @@ export default {
   extends: [
     'stylelint-config-standard',
     'stylelint-config-tailwindcss',
-    'stylelint-config-standard-scss'
+    'stylelint-config-standard-scss',
   ],
 
-  plugins: [
-    'stylelint-order',
-    'stylelint-scss'
-  ],
+  plugins: ['stylelint-order', 'stylelint-scss'],
 
   customSyntax: 'postcss-html',
 
-  ignoreFiles: [
-    '**/node_modules/**',
-    '**/dist/**',
-    '**/build/**',
-    '**/coverage/**'
-  ],
+  ignoreFiles: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/coverage/**'],
 
   rules: {
     /* General */
@@ -42,6 +34,6 @@ export default {
     /* Tailwind */
     'at-rule-no-unknown': null,
 
-    'scss/at-rule-no-unknown': true
-  }
+    'scss/at-rule-no-unknown': true,
+  },
 };
