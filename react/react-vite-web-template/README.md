@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# React + Vite + TypeScript + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal yet scalable setup to get **React** running with **Vite**, enhanced by **TypeScript** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## ✅ Benefits of This Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Enterprise standards** → Aligns with best practices for large React projects.
+- **Separation of concerns** → Each domain (UI, state, API, routing) has its own folder.
+- **Developer Experience** → Fast builds with Vite, type safety with TypeScript, and utility-first styling with Tailwind.  
+- **Scalability** → Easy to add new features without clutter.
+- **Quality Assurance** → ESLint + Stylelint catch issues early, Prettier enforces clean code style.  
 
-## React Compiler
+## 🚀 Enterprise-Ready Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+For building enterprise large-scale React applications, the following combination is robust, modern, and widely adopted:
 
-## Expanding the ESLint configuration
+| Category   | Technology                         |
+| ---------- | ---------------------------------- |
+| Framework  | React 19                           |
+| Build Tool | Vite                               |
+| UI         | Tailwind CSS                       |
+| Language   | TypeScript                         |
+| Routing    | React Router                       |
+| State      | Redux Toolkit                      |
+| API        | Redux Toolkit Query *(in progress)*|
+| Forms      | React Hook Form *(in progress)*    |
+| Linting    | ESLint                             |
+| CSS        | Stylelint                          |
+| Formatting | Prettier                           |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Getting Started
+```bash
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Start development server
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+# Build for production
+npm run build
+
+# Lint code
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## 📂 Recommended Folder Structure
+```bash
+src/
+├── assets/          # Static assets (images, fonts, icons)
+├── components/      # Reusable UI components
+├── feautres/        # Feauture level components
+├── layouts/         # Shared layouts (headers, sidebars, footers)
+├── hooks/           # Custom React hooks
+├── services/        # API calls, RTK Query endpoints
+├── styles/          # Global styles, Tailwind config overrides
+├── utils/           # Helper functions and utilities
+├── router/          # Centralized React Router configuration
+├── app              # Root application component
+└── main.tsx         # Entry point (renders App into DOM)
 ```
